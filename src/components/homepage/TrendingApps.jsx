@@ -1,9 +1,11 @@
-import React, { use, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router';
+import React from 'react';
+import { Link } from 'react-router';
 import AppCard from '../ui/AppCard';
 import { HashLoader } from 'react-spinners';
+import useApps from '../../hooks/useApps';
 
-const appsPromise = fetch("/data.json").then((res)=>res.json());
+// const appsPromise = fetch("/data.json").then((res)=>res.json());
+// console.log(appsPromise)
 
 const TrendingApps = () => {
     // const apps = use(appsPromise);
@@ -12,19 +14,21 @@ const TrendingApps = () => {
     // const data = useLoaderData();
     // console.log(data,"data from homepage")
 
-    const [apps, setApps] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const {apps, loading} = useApps()
 
-    useEffect(()=>{
-        const fetchData = async () =>{
-            const res = await fetch("/data.json")
-            const data = await res.json()
-            console.log(data)
-            setApps(data)
-            setLoading(false)
-        }
-        fetchData()
-    },[])
+    // const [apps, setApps] = useState([]);
+    // const [loading, setLoading] = useState(true)
+
+    // useEffect(()=>{
+    //     const fetchData = async () =>{
+    //         const res = await fetch("/data.json")
+    //         const data = await res.json()
+    //         console.log(data)
+    //         setApps(data)
+    //         setLoading(false)
+    //     }
+    //     fetchData()
+    // },[])
 
     console.log(apps)
 
