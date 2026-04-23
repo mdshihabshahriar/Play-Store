@@ -36,7 +36,7 @@ const AppDetails = () => {
         <div className='container mx-auto shadow-sm mt-10'>
             <div className='inline md:flex items-center gap-5'>
                 <div>
-                    <img src={expectedApp.image} className='h-100 w-auto' alt="" />
+                    <img src={expectedApp.image} className='md:h-100 h-50 md:mx-0 mx-auto w-auto' alt="" />
                 </div>
                 <div className='space-y-6'>
                     <h3 className='text-3xl font-bold'>{expectedApp.title}</h3>

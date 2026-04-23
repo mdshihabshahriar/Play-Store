@@ -4,7 +4,7 @@ import { InstalledAppsContext } from '../../context/InstalledAppsContext';
 import useApps from '../../hooks/useApps';
 
 const Dashboard = () => {
-    const {installedApps, setInstalledApps} = useContext(InstalledAppsContext)   
+    const {installedApps} = useContext(InstalledAppsContext)   
     const {apps} = useApps();
 
     const uninstalledApps = apps.length - installedApps.length
